@@ -1,10 +1,5 @@
 node_modules/
-test-results/
-allure-results/
 allure-report/
 html-report/
 html-report.zip/
 .idea
-playwright-report
-test-result.json
-report.zip
