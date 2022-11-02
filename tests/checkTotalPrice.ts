@@ -1,9 +1,9 @@
 import test from "../lib/BaseTest";
 import {testConfig} from "../testConfig";
 
-test.describe("Management Pages Tests", () => {
+test.describe("Global Automation", () => {
 
-    test("Book a demo @reg",  async ({basePage, searchPage, productPage, shoppingCartPage}) => {
+    test("Check total price @reg",  async ({basePage, searchPage, productPage, shoppingCartPage}) => {
 
         let firstProductName: string;
         let secondProductName: string;
