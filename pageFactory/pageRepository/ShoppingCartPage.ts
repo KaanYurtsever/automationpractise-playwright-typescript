@@ -36,10 +36,6 @@ export default class ShoppingCartPage extends BasePage{
     }
 
     async checkTotalPrice(): Promise<void> {
-        //const productTotalPrice1 = await this.page.locator("//td//a[contains(text(), '" + productName + "')]//..//..//..//span[contains(@id, 'total_product_price')]").textContent();
-        //const productPrice1 = productTotalPrice1?.trim().replace(/\$/g, '');
-        //const productTotalPrice2 = await this.page.locator("//td//a[contains(text(), '" + productName2 + "')]//..//..//..//span[contains(@id, 'total_product_price')]").textContent();
-        //const productPrice2 = productTotalPrice2?.trim().replace(/\$/g, '');
         await this.page.waitForTimeout(5000);
         const totalProduct = await this.page.locator(ShoppingCartPageObjects.TOTAL_PRODUCT_PRICE).textContent();
         const totalProductPrice = totalProduct?.trim().replace(/\$/g, '');
