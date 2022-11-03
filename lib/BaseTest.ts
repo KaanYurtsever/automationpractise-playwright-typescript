@@ -4,6 +4,8 @@ import ShoppingCartPage from "../pageFactory/pageRepository/ShoppingCartPage";
 import ProductPage from "../pageFactory/pageRepository/ProductPage";
 import SearchPage from "../pageFactory/pageRepository/SearchPage";
 
+//NOTE: With this class we can use context everywhere in our project
+
 const test = baseTest.extend<{
 
     basePage: BasePage;

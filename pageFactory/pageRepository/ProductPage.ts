@@ -2,7 +2,6 @@ import {BrowserContext, expect, Page} from "@playwright/test";
 import {WebActions} from "../../lib/WebActions";
 import {ProductPageObjects} from "../objectRepository/ProductPageObjects";
 import BasePage from "./BasePage";
-import {SearchPageObjects} from "../objectRepository/SearchPageObjects";
 
 let webActions: WebActions;
 
@@ -21,7 +20,7 @@ export default class ProductPage extends BasePage{
 
     async changeQuantity(quantity: string): Promise<void> {
         await webActions.enterElementText(ProductPageObjects.QUANTITY_FIELD, quantity);
-        //await this.page.frameLocator(SearchPageObjects.IFRAME).locator(SearchPageObjects.QUANTITY_FIELD).fill(quantity);
+        //await this.page.frameLocator(SearchPageObjects.IFRAME).locator(SearchPageObjects.QUANTITY_FIELD).fill(quantity); //Another product detail frame
     }
 
     async changeSize(size: string): Promise<void> {

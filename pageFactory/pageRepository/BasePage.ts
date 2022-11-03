@@ -2,7 +2,6 @@ import {BrowserContext, expect, Page} from "@playwright/test";
 import {WebActions} from "../../lib/WebActions";
 import {BasePageObjects} from "../objectRepository/BasePageObjects";
 import {testConfig} from "../../testConfig";
-import {SearchPageObjects} from "../objectRepository/SearchPageObjects";
 
 let webActions: WebActions;
 

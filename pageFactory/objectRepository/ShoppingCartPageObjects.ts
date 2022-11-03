@@ -5,5 +5,4 @@ export class ShoppingCartPageObjects {
     static TOTAL_PRICE = '#total_price';
     static TOTAL_PRODUCT_PRICE = '#total_product';
     static TOTAL_TAX_PRICE = '#total_tax';
-
 }

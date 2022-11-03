@@ -21,8 +21,11 @@ export default class SearchPage extends BasePage {
     async goToProductDetail(): Promise<void> {
         await this.page.waitForSelector(SearchPageObjects.LIST_BUTTON);
         await this.page.hover(SearchPageObjects.LIST_BUTTON);
-        for (let i=0; i<3; i++){
+        while (true){
             await webActions.clickElement(SearchPageObjects.LIST_BUTTON);
+            if (await this.page.waitForSelector("//a[@title='List']//..//..//li[@class = 'selected']")){
+                break
+            }
         }
         await this.page.locator(SearchPageObjects.PRODUCT_DETAIL).first().click();
     }

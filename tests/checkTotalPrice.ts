@@ -34,7 +34,7 @@ test.describe("Global Automation", () => {
             await basePage.goToHomePage();
         })
 
-        await test.step("User should search second product, should choose details and add to cart ", async () =>{
+        await test.step("User should search second product, should choose details and add to cart", async () =>{
             await basePage.searchProduct(testConfig.productTwo);
             await searchPage.checkSearchPageIsOpen();
             secondProductName = await searchPage.getProductName();
@@ -51,7 +51,7 @@ test.describe("Global Automation", () => {
             await basePage.goToHomePage();
         })
 
-        await test.step("User should search third product, should choose details and add to cart ", async () =>{
+        await test.step("User should search third product, should choose details and add to cart", async () =>{
             await basePage.searchProduct(testConfig.productThree);
             await searchPage.checkSearchPageIsOpen();
             thirdProductName = await searchPage.getProductName();
@@ -66,18 +66,17 @@ test.describe("Global Automation", () => {
             await productPage.checkProductIsAdded();
         })
 
-        await test.step("User should go shopping-cart page and move some actions ", async () =>{
+        await test.step("User should go shopping-cart page and make some actions", async () =>{
             await productPage.proceedToCheckout();
             await shoppingCartPage.checkShoppingCartPageIsOpen();
             await shoppingCartPage.removeProductFromCart(secondProductName);
-            await shoppingCartPage.increaseProductQuantity(firstProductName);
+            await shoppingCartPage.increaseProductQuantityByOneTime(firstProductName);
         })
 
         await test.step("User should check total prices", async () =>{
-            await shoppingCartPage.checkEachProductTotalPrice(thirdProductName, thirdProductPrice );
+            await shoppingCartPage.checkEachProductTotalPrice(thirdProductName, thirdProductPrice);
             await shoppingCartPage.checkEachProductTotalPrice(firstProductName, firstProductPrice);
             await shoppingCartPage.checkTotalPrice();
         })
-
     });
 })
