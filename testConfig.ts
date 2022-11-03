@@ -4,7 +4,7 @@ export const testConfig = {
     productOne: 'Faded Short Sleeve T Shirt',
     productTwo: 'Evening Dress',
     productThree: 'Printed Summer Dress',
-    smallsize: '1',
+    smallSize: '1',
     mediumSize: '2',
     blueColor: "Blue",
     beigeColor: "Beige",

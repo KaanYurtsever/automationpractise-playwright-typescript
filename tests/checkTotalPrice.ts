@@ -17,7 +17,7 @@ test.describe("Global Automation", () => {
             await basePage.checkUrlCorrect();
         })
 
-        await test.step("User should search first product, choose details and add to cart ", async () =>{
+        await test.step("User should search first product, choose details and add the product to cart ", async () =>{
             await basePage.searchProduct(testConfig.productOne);
             await searchPage.checkSearchPageIsOpen();
             firstProductName = await searchPage.getProductName();
@@ -34,7 +34,7 @@ test.describe("Global Automation", () => {
             await basePage.goToHomePage();
         })
 
-        await test.step("User should search second product, choose details and add to cart", async () =>{
+        await test.step("User should search second product, choose details and add the product  to cart", async () =>{
             await basePage.searchProduct(testConfig.productTwo);
             await searchPage.checkSearchPageIsOpen();
             secondProductName = await searchPage.getProductName();
@@ -43,7 +43,7 @@ test.describe("Global Automation", () => {
             secondProductPrice = await productPage.getProductPrice();
             console.log("Second product price: " + secondProductPrice);
             await productPage.changeQuantity("1");
-            await productPage.changeSize(testConfig.smallsize);
+            await productPage.changeSize(testConfig.smallSize);
             await productPage.changeColor(testConfig.beigeColor);
             await productPage.addToCart();
             await productPage.checkProductIsAdded();
@@ -51,7 +51,7 @@ test.describe("Global Automation", () => {
             await basePage.goToHomePage();
         })
 
-        await test.step("User should search third product, choose details and add to cart", async () =>{
+        await test.step("User should search third product, choose details and add the product to cart", async () =>{
             await basePage.searchProduct(testConfig.productThree);
             await searchPage.checkSearchPageIsOpen();
             thirdProductName = await searchPage.getProductName();
@@ -66,11 +66,11 @@ test.describe("Global Automation", () => {
             await productPage.checkProductIsAdded();
         })
 
-        await test.step("User should go shopping-cart page and make some actions", async () =>{
+        await test.step("User should go to the shopping-cart page and make some changes", async () =>{
             await productPage.proceedToCheckout();
             await shoppingCartPage.checkShoppingCartPageIsOpen();
             await shoppingCartPage.removeProductFromCart(secondProductName);
-            await shoppingCartPage.increaseProductQuantityByOneTime(firstProductName);
+            await shoppingCartPage.increaseProductQuantityByOne(firstProductName);
         })
 
         await test.step("User should check total prices", async () =>{
