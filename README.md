@@ -11,7 +11,8 @@ Test steps;
 - Assert the total for each line in the cart
 - Assert the cart total is $64.00 (It is not $65.53, because one of the product has discount)
 ## Video of the test
-[video.webm](https://user-images.githubusercontent.com/89412371/199715647-11fa26d7-1863-4a7c-914c-8582c7e11d79.webm)
+
+[video.webm](https://user-images.githubusercontent.com/89412371/199796496-254326bd-4b1e-48ac-8e0e-8d1846306174.webm)
 
 ## How to run scenario?
 You can run your tests with "npm test" on terminal, and you can choose which test you want on playwright.config file. Also, there are other scripts to run tests on package.json file.
