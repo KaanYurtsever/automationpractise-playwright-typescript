@@ -26,7 +26,7 @@ export default class ShoppingCartPage extends BasePage{
     async increaseProductQuantityByOne(productName: string): Promise<void> {
         await webActions.clickElement("//td//a[contains(text(), '" + productName + "')]//..//..//..//i[@class = 'icon-plus']");
         await this.page.waitForSelector("//td//a[contains(text(), '" + productName + "')]//..//..//..//input[@size = '2']");
-        await this.page.waitForTimeout(6000);
+        await this.page.waitForTimeout(9000);
     }
 
     async checkEachProductTotalPrice(productName: string, productPrice: string): Promise<void> {
