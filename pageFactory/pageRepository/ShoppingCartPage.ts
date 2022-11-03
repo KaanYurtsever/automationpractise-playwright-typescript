@@ -41,8 +41,7 @@ export default class ShoppingCartPage extends BasePage{
         const totalShippingPrice = totalShipping?.trim().replace(/\$/g, '');
         const totalTax = await this.page.locator(ShoppingCartPageObjects.TOTAL_TAX_PRICE).textContent();
         const totalTaxPrice = totalTax?.trim().replace(/\$/g, '');
-
-        const total = Number(totalProductPrice).toPrecision(4) + Number(totalShippingPrice).toPrecision(4) + Number(totalTaxPrice).toPrecision(4);
+        const total = Number(Number(Number(totalProductPrice).toPrecision(4)) + Number(Number(totalShippingPrice).toPrecision(4)) + Number(Number(totalTaxPrice).toPrecision(4))).toFixed(2);
         const totalWithDollar = "$" + total;
         console.log("TOTAL: " + totalWithDollar);
         await this.page.hover(ShoppingCartPageObjects.TOTAL_PRICE);
@@ -50,5 +49,4 @@ export default class ShoppingCartPage extends BasePage{
         const expectedTotalPrice = expectedTotal?.trim();
         await expect(totalWithDollar).toBe(expectedTotalPrice);
     }
-
 }

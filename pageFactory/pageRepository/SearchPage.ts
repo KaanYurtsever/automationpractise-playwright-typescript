@@ -34,9 +34,4 @@ export default class SearchPage extends BasePage {
         const result = await Promise.resolve(this.page.locator(SearchPageObjects.PRODUCT_NAME).first().textContent());
         return result?.trim();
     }
-
-
-
-
-
 }
