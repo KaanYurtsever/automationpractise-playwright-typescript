@@ -17,7 +17,7 @@ test.describe("Global Automation", () => {
             await basePage.checkUrlCorrect();
         })
 
-        await test.step("User should search first product, should choose details and add to cart ", async () =>{
+        await test.step("User should search first product, choose details and add to cart ", async () =>{
             await basePage.searchProduct(testConfig.productOne);
             await searchPage.checkSearchPageIsOpen();
             firstProductName = await searchPage.getProductName();
@@ -34,7 +34,7 @@ test.describe("Global Automation", () => {
             await basePage.goToHomePage();
         })
 
-        await test.step("User should search second product, should choose details and add to cart", async () =>{
+        await test.step("User should search second product, choose details and add to cart", async () =>{
             await basePage.searchProduct(testConfig.productTwo);
             await searchPage.checkSearchPageIsOpen();
             secondProductName = await searchPage.getProductName();
@@ -51,7 +51,7 @@ test.describe("Global Automation", () => {
             await basePage.goToHomePage();
         })
 
-        await test.step("User should search third product, should choose details and add to cart", async () =>{
+        await test.step("User should search third product, choose details and add to cart", async () =>{
             await basePage.searchProduct(testConfig.productThree);
             await searchPage.checkSearchPageIsOpen();
             thirdProductName = await searchPage.getProductName();

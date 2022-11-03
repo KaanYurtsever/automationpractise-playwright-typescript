@@ -12,7 +12,7 @@ const config: PlaywrightTestConfig = {
             args: ["--start-maximized"],
         }
     },
-    timeout: 10 * 10000,
+    timeout: 10 * 100000,
     grep: [new RegExp("@smoke"), new RegExp("@reg")],
     testMatch: ["checkTotalPrice.ts"],
     retries: 0,

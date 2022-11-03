@@ -26,11 +26,18 @@ export default class ShoppingCartPage extends BasePage{
     async increaseProductQuantityByOneTime(productName: string): Promise<void> {
         await webActions.clickElement("//td//a[contains(text(), '" + productName + "')]//..//..//..//i[@class = 'icon-plus']");
         await this.page.waitForSelector("//td//a[contains(text(), '" + productName + "')]//..//..//..//input[@size = '2']");
+        await this.page.waitForTimeout(6000);
     }
 
     async checkEachProductTotalPrice(productName: string, totalPrice: string): Promise<void> {
         const productTotalPrice = await this.page.locator("//td//a[contains(text(), '" + productName + "')]//..//..//..//span[contains(@id, 'total_product_price')]").textContent();
-        await expect(productTotalPrice?.trim()).toBe(totalPrice);
+        const numTotalPrice = totalPrice.trim().replace(/\$/g, '');
+        const quantity = await this.page.locator("//td//a[contains(text(), '" + productName + "')]//..//..//..//input[contains(@class, 'cart_quantity')]").inputValue();
+        console.log("quantity: " + quantity)
+        const newTotal = Number(Number(Number(numTotalPrice).toPrecision(4))*Number(Number(quantity)));
+        const newPriceWithDollar = "$" + newTotal;
+        console.log("productTotalPrice: "+productTotalPrice +"," + "totalPriceWithMath: "+newPriceWithDollar)
+        await expect(productTotalPrice?.trim()).toBe(newPriceWithDollar);
     }
 
     async checkTotalPrice(): Promise<void> {
