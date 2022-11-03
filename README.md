@@ -27,4 +27,4 @@ Addition to run tests, There is github action file. You can find it at workflows
 - Write to terminal 'allure serve' to see the report.
 - Note: If you use windows, you should download allure from there 'https://docs.qameta.io/allure/', and go to environment variables then add to path.
 
-Also, you can see reports on; playwright report, test-results.json and report.zip file. 
+Also, you can see reports on; playwright-report, test-results.json. 
