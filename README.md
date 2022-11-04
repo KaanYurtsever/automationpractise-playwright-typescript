@@ -16,13 +16,8 @@ Test steps;
 
 ## How to run the scenario?
 You can run your tests with "npm test" on terminal, and you can choose the test you want to run on playwright.config file. Also, there are other scripts to run tests on package.json file.
-## How to run the scenario on Docker?
-You can run your tests on Docker with these commands;
-
-- docker build -t playwright-docker .
-- docker run -it playwright-docker:latest npm run test
-
-Addition to running tests on Docker, there is also the github action file. You can find it at workflows. With this CI/CD, also you can run your test, which is defined on github.config file.
+## How to run the scenario with GitHub Action?
+There is also the GitHub action file. You can find it at workflows. With this CI/CD, you can run your test, which is defined on github.config file.
 ## How to see the report of the test?
 - Write on terminal 'allure serve' to see the report.
 - Note: If you are using Windows, you should download allure from: 'https://docs.qameta.io/allure/', and go to environment variables then add to path.
